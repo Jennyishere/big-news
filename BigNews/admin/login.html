@@ -82,6 +82,9 @@
         $('#myModal').modal()
           console.log(res);
           if(res.code == 200) {
+            console.log(res);
+            
+            window.localStorage.setItem('token',res.token)
             $('#myModal').on('hidden.bs.modal', function (e) {
               window.location.href = './index.html';
 })
