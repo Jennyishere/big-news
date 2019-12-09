@@ -1,73 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>文章列表</title>
-    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/iconfont.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <script src="./libs/jquery-1.12.4.min.js"></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="container-fluid">
-        <div class="common_title">
-            用户信息修改
-        </div>
-        <div class="container-fluid common_con">
-            <form class="form-horizontal article_form" id="form">
-                <div class="form-group">
-                    <label for="inputEmail1" class="col-sm-2 control-label">用户名称：</label>
-                    <div class="col-sm-4">
-                        <input type="text" name="username" class="form-control username" id="inputEmail1" value="李思思">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail2" class="col-sm-2 control-label">昵称：</label>
-                    <div class="col-sm-4">
-                        <input type="text" name="nickname" class="form-control nickname" id="inputEmail2" value="哈哈思">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">邮箱：</label>
-                    <div class="col-sm-4">
-                        <input type="text" name="email" class="form-control email" id="inputEmail3" value="520@163.com">
-                    </div>
-                </div>
+      <div class="common_title">
+        用户信息修改
+      </div>
+      <div class="container-fluid common_con">
+        <form class="form-horizontal article_form" id="form">
+          <div class="form-group">
+            <label for="inputEmail1" class="col-sm-2 control-label"
+              >用户名称：</label
+            >
+            <div class="col-sm-4">
+              <input
+                type="text"
+                name="username"
+                class="form-control username"
+                id="inputEmail1"
+                value="李思思"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail2" class="col-sm-2 control-label"
+              >昵称：</label
+            >
+            <div class="col-sm-4">
+              <input
+                type="text"
+                name="nickname"
+                class="form-control nickname"
+                id="inputEmail2"
+                value="哈哈思"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label"
+              >邮箱：</label
+            >
+            <div class="col-sm-4">
+              <input
+                type="text"
+                name="email"
+                class="form-control email"
+                id="inputEmail3"
+                value="520@163.com"
+              />
+            </div>
+          </div>
 
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">用户图标：</label>
-                    <div class="col-sm-10">
-                        <img src="images/2.jpg" alt="" class="user_pic">
-                        <input style="display: block" name="userPic" type="file" id="exampleInputFile">
-                        <!-- 给label标签的for属性赋值,值是input标签的id,那这样的话点击label就相当于点击了input -->
-                        <br>
-                        <label for="exampleInputFile">
-                            <img src="./images/uploads_icon.jpg" style="height: 50px;" alt="">
-                        </label>
-                    </div>
-                </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"
+              >用户图标：</label
+            >
+            <div class="col-sm-10">
+              <img src="images/2.jpg" alt="" class="user_pic" />
+              <input
+                style="display: block"
+                name="userPic"
+                type="file"
+                id="exampleInputFile"
+              />
+              <!-- 给label标签的for属性赋值,值是input标签的id,那这样的话点击label就相当于点击了input -->
+              <br />
+              <label for="exampleInputFile">
+                <img
+                  src="./images/uploads_icon.jpg"
+                  style="height: 50px;"
+                  alt=""
+                />
+              </label>
+            </div>
+          </div>
 
-                <div class="form-group">
-                    <label for="inputEmail4" class="col-sm-2 control-label">密码：</label>
-                    <div class="col-sm-4">
-                        <input type="password" name="password" class="form-control password" id="inputEmail4"
-                            value="12345678">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-success btn-edit">修改</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+          <div class="form-group">
+            <label for="inputEmail4" class="col-sm-2 control-label"
+              >密码：</label
+            >
+            <div class="col-sm-4">
+              <input
+                type="password"
+                name="password"
+                class="form-control password"
+                id="inputEmail4"
+                value="12345678"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-success btn-edit">
+                修改
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-</body>
+  </body>
+  <script src="./libs/html.js"></script>
+  <!-- 创建一个模板引擎 -->
+  <!-- <script type="text/html" id="category">
+    {{each data}}
 
+    {{/each}}
+</script> -->
+  <script>
+    //发送ajax请求
+    $(() => {
+      $.get({
+        url: window.path.getUserDetailPath,
+        success: function(res) {
+          // console.log(res);
+          // $('.username').val(res.data.name);
+          for (key in res.data) {
+            // $().val(res.data[key])
+            $("." + key).val(res.data[key]);
+          }
+          $(".user_pic").attr("src", res.userPic);
+        }
+      });
+      //给选择文件注册change事件
+      $("#exampleInputFile").hide();
+      $("#exampleInputFile").change(function() {
+        // console.dir(this);
+        //拿到路径
+        let url = window.URL.createObjectURL(this.files[0]);
+        // console.log(url);
+        $(".user_pic").attr("src", url);
+      });
+      //给修改键注册事件
+      $(".btn-edit").click(function(e) {
+        e.preventDefault(); //需要阻止默认事件 不然页面会被刷新 就获取不到数了
+        let data = new FormData($("#form")[0]);
+        $.post({
+          url: path.getUserEditPath,
+          data: data,
+          processData: false,
+          contentType: false,
+          success: function(res) {
+            //   console.log(res);//更新成功就把主页面修改一下
+            if (res.code == 200) {
+                $.ajax({
+            url: path.getinfoPath,
+            type: 'get',
+            success: function (res) { 
+                // if(res.code == 200) {
+                    parent.$('.user_info img').attr('src', res.data.userPic);
+                    parent.$('.user_center_link img').attr('src', res.data.userPic);
+                    parent.$('.user_info span').html(`欢迎&nbsp;&nbsp;${res.data.nickname}`);
+                // }
+             }
+        })
+            }
+          }
+        });
+      });
+    });
+  </script>
 </html>
