@@ -147,21 +147,27 @@
             //如果传入的参数res为空 则callback函数会报错 所以判断如果res为空就不执行
             //   console.log(res);
 
-            if(res.data.data.totalPage !== 0) {
-            callback && callback(res);
+            if (res.data.data.length !== 0 && callback != null) {   //数据不为空 且回调函数存在
+              callback(res);
+              $("#pagination-demo").show();
+              $('.tips').hide();
+            } else if (res.data.totalPage !== 0 && res.data.data.length == 0 && res.data.totalPage == mypage - 1) {          //当页数据为0且总页数不为0时  让页数-1
+              mypage -= 1;
+              $("#pagination-demo").twbsPagination(
+                "changeTotalPages",
+                res.data.totalPage,
+                mypage
+              );
+            } else {
+              $("#pagination-demo").hide();
+              $('.tips').show();
             }
-            //   $('.tips').hide();
 
-            //   }else {
 
-            //     $("#pagination-demo").hide();
-            //     $('.tips').show();
 
-            //   }
 
-            //   if(mypage > 1 )
 
-            // if(res.data.data.length !=0 && )
+
           }
         }
       });
@@ -182,7 +188,7 @@
           // $('#page-content').text('Page ' + page);
           // console.log(page);拿到页数传入 渲染到当前页
           mypage = page; //把当前的页数赋给mypage 方便下面删除
-          getDataList(mypage);
+          getDataList(mypage, function () { });
         }
       });
     });
@@ -218,29 +224,9 @@
           if (res.code == 204) {
             //刷新页面 用户体验 停留在当前  把当前mypage传入
 
-            getDataList(mypage, function (ress) {
-              console.log(mypage);
-              console.log(Math.ceil(ress.data.totalPage / 10));
+            getDataList(mypage, function () {
 
-              if (ress.data.totalPage == 0) {
-                $("#pagination-demo").hide();
-                $(".tips").show();
-                return null;
-              } else if (
-                mypage > 1 &&
-                ress.data.data.length % 10 === 0 &&
-                ress.data.totalPage !== 0
-              ) {
-                $("#pagination-demo").show();
-                $(".tips").hide();
-                getDataList(Math.ceil(ress.data.totalPage / 10), function (res) {
-                  $("#pagination-demo").twbsPagination("changeTotalPages",
-                    res.data.totalPage,
-                    mypage - 1
-                  );
-                });
-              }
-            });
+            })
           }
         }
       });
